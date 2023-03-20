@@ -1,5 +1,5 @@
 import Escena from './components/escena/Escena';
-import textdata from './text';
+import pagedata from './text';
 import React from 'react';
 
 const buttonStyle = {
@@ -16,7 +16,11 @@ const startStyle = {
   'fontFamily': 'sans-serif',
   'marginTop': '120px'
 }
-  
+
+const pageStyle = { 'textAlign': 'center' }
+
+console.log(pagedata[1].img);
+
 function App() {
 
   const [ position, setPosition ] = React.useState(0);
@@ -39,10 +43,11 @@ function App() {
     );
   } else {
     return (
-      <div>
+      <div style={pageStyle}>
         <button onClick={navBack} style={buttonStyle}>Anterior</button>
         <button onClick={navNext} style={buttonStyle}>Següent</button>
-        <Escena text={textdata} activePosition={position} />
+        <Escena text={pagedata} activePosition={position} />
+        <img src={pagedata[position].img} alt={pagedata[position].text}></img>
       </div>
     );
   }
