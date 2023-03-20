@@ -14,7 +14,11 @@ function Escena(props) {
 
   const textLines = props.text.map(line => {
     return (
-      <TextLine key={line.id}>{line.text}</TextLine>
+      <TextLine
+        key={line.id}
+        style={{ backgroundColor: props.activePosition === line.id ? "pink" : "transparent" }}>
+          {line.text}
+      </TextLine>
     );
   });
 
