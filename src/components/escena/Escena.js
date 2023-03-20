@@ -1,7 +1,14 @@
-function Escena() {
+function Escena(props) {
+
+  const textLines = props.text.map(line => {
+    return (
+      <p key={line.id}>{line.text}</p>
+    );
+  });
+
   return (
     <div>
-      El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial.
+      {textLines}
     </div>
   );
 }

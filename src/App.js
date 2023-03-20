@@ -1,9 +1,10 @@
 import Escena from './components/escena/Escena';
+import textdata from './text';
 
 function App() {
   return (
     <div>
-      <Escena />      
+      <Escena text={textdata} />
     </div>
   );
 }
